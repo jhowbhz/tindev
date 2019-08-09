@@ -6,4 +6,7 @@ const server = express();
 server.use(express.json());
 server.use(routes);
 
-server.listen(3333);
+var porta = process.env.PORT || 8080;
+app.listen(porta);
+
+//server.listen(3333);
