@@ -2,8 +2,12 @@ const express = require('express');
 const routes = express.Router();
 
 // get, post, put, delete
+routes.get('/', (requisicao, resposta) => {
+    return resposta.json({ mensagem: `/api`});
+});
+
 routes.get('/api/', (requisicao, resposta) => {
-    return resposta.json({ mensagem: `Hello World xxxxxxxxxxxxx ${requisicao.query.name}`});
+    return resposta.json({ mensagem: `Olá!!!`});
 });
 
 routes.post('/api/devs', (requisicao, resposta) => {
