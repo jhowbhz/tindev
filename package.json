@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node src/server.js",
+    "test": "node src/server.js"
   },
   "dependencies": {
     "ejs": "^2.5.6",
