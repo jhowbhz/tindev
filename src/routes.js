@@ -1,20 +1,10 @@
 const express = require('express');
+const DevController = require('./controllers/DevController')
+const LikeController = require('./controllers/LikeController')
+
 const routes = express.Router();
 
-// get, post, put, delete
-routes.get('/', (requisicao, resposta) => {
-    return resposta.json({ mensagem: `/api`});
-});
-
-routes.get('/api/', (requisicao, resposta) => {
-    return resposta.json({ mensagem: `Olá!!!`});
-});
-
-routes.post('/api/devs', (requisicao, resposta) => {
-
-    console.log(requisicao.body);
-    return resposta.json(requisicao.body);
-
-});
+routes.post('/api/devs', DevController.store);
+routes.post('/api/devs/:devId/likes', LikeController.store);
 
 module.exports = routes;
